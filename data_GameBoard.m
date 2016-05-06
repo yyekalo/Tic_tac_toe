@@ -1,7 +1,5 @@
-function Y = data_GameBoard(GameBoard)
 
-Data = GameBoard;
 
-Y = Data; 
-return
-end
+global Data 
+Data = zeros(3,3);
+

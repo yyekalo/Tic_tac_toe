@@ -20,11 +20,13 @@ turn = sum(data.player1.turn);
 % toggeling between X and 0   
  if mod(turn,2) == 1
      data.gameboard(position)= 1; %3x3 matrix
-     set(gcbo,'String','X');   
+     set(gcbo,'String','X'); 
+     set(gcbo, 'Enable','off')
           
  elseif mod(turn,2) == 0
      data.gameboard(position) = -1;
-     set(gcbo,'String','O');     
+     set(gcbo,'String','O'); 
+     set(gcbo, 'Enable','off')
      
  end 
 

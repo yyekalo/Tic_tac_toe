@@ -12,10 +12,11 @@ function position=getposition(gameboard)
 
 position=randi(9);
 
+gameboard
 while gameboard(position)~=0
     
     position=randi(9);
     
 end
-
+gameboard
 end

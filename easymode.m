@@ -1,22 +1,29 @@
 function esaymoode(position)
 
-Data.gameboard
-if Data.gameboard(position)==0 && CheckForWin(Data.gameboard)==0
+data = get(gcbf,'Userdata')
+data.gameboard(position)
+disp('before the loop')
+CheckForWin(data.gameboard)
+
+if data.gameboard(position)==0 && CheckForWin(data.gameboard)==0
     
-    set(gcbo,'String','X');
-    Data.gameboard(position)=1;
+    disp('we got here')
+    set(gcbo,'String','X','Enable','off');
+    data.gameboard(position)=1;
     
     %This makes sure the computer doesnt play after you win
-    if 0==CheckForWin(Data.gameboard)
+    if 0==CheckForWin(data.gameboard)
         
-        position=getposition(Data.gameboard);
-        Data.gameboard(position)=-1;
+        computerposition=getposition(data.gameboard);
+        data.gameboard(computerposition)=-1;
         
         %represent each cell where you can use to modify properties
-        h = findobj( ms, 'Tag', ['cell',num2str(position)]);
-        set(h,'String','O');
+        h = findobj( gcbf, 'Tag', ['cell',num2str(computerposition)]);
+        set(h,'String','O','Enable','off');
+        
     end
 end
 
+set(gcbf,'userdata',data)
 end
 

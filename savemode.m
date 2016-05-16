@@ -1,4 +1,4 @@
-function please
+function savemode
 % Perpose: savemode is a function that sets the data structur mode to the 
 %          selected user mode. it then opens up GU1 2 
 % 
